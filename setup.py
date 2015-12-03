@@ -1,10 +1,11 @@
+from __future__ import absolute_import
 from setuptools import setup, find_packages
 
 from brake import VERSION
 
 setup(
     name='django-brake',
-    version='.'.join(map(str, VERSION)),
+    version='.'.join([str(v) for v in VERSION]),
     description='Cache-based rate-limiting for Django.',
     long_description=open('README.rst').read(),
     author='James Socol, Gavin McQuillan',
@@ -13,7 +14,7 @@ setup(
     license='BSD',
     packages=find_packages(),
     include_package_data=True,
-    package_data = { '': ['README.rst'] },
+    package_data={'': ['README.rst']},
     install_requires=[
         'django',
         'nose',

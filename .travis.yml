@@ -10,5 +10,6 @@ env:
     - DJANGO_VERSION=1.8.2
 install:
     - python setup.py develop
+    - pip list
 script:
     - bash test.sh

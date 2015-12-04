@@ -1,6 +1,6 @@
 import random
 
-from cachebe import CacheBackend
+from .cachebe import CacheBackend
 
 
 class DummyBackend(CacheBackend):

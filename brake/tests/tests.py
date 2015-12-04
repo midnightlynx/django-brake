@@ -1,8 +1,10 @@
+from __future__ import print_function
+import django
 from django.core.cache import cache
 from django.http import HttpResponse
-from django.utils import unittest
 
 from brake.decorators import ratelimit
+from brake.tests.compat import unittest
 
 
 class MockRLKeys(object):
@@ -42,6 +44,7 @@ class RateLimitTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        print('django version: {}'.format(".".join(django.VERSION)))
         # Class Globals
         # Add any test function names here to get them automatically
         # populated in cache.
